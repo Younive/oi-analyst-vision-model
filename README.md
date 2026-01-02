@@ -53,10 +53,11 @@ The model was fine-tuned on 97 image-text pairs consisting of:
 ### Fine-tuning Configuration
 - **Method**: QLoRA (4-bit quantization + LoRA)
 - **LoRA Rank**: 8
-- **LoRA Alpha**: 16
-- **Target Modules**:
+- **LoRA Alpha**: 32
+- **LoRA_dropout**: 0.05
+- **Target Modules**: "q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"
 - **Learning Rate**: 2e-4
-- **Batch size**: 1(with gradient accumulation=8)
+- **Batch size**: 1(with gradient accumulation=4)
 - **Epochs**: 5
 - **Training Time**: ~40 minutes on L4 GPU
 
