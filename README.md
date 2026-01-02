@@ -61,9 +61,9 @@ The model was fine-tuned on 97 image-text pairs consisting of:
 - **Training Time**: ~40 minutes on L4 GPU
 
 ### Performance Metrics
-- **Training Loss**:
-- **Validation Loss**:
-- **Memory Usage**:
+- **Training Loss**: 1.037900
+- **Validation Loss**: 0.824295
+- **Memory Usage**: 16 GB of VRAM
 
 ## Result
 ### Sample Analyses
