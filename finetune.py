@@ -1,5 +1,5 @@
-import torch
 from unsloth import FastVisionModel, is_bfloat16_supported
+from unsloth.trainer import UnslothVisionDataCollator
 from trl import SFTTrainer, SFTConfig
 from transformers import AutoProcessor
 from config import BASE_MODEL, BATCH_SIZE, EPOCHS, GRAD_ACCUMULATION, LEARNING_RATE, MAX_SEQ_LENGTH, OUTPUT_FILE
@@ -32,6 +32,9 @@ model = FastVisionModel.get_peft_model(
 
 # get train and eval datasets
 train_dataset, eval_dataset = get_datasets()
+
+# define data collator
+data_collator = UnslothVisionDataCollator(model, tokenizer)
 
 # define trainer
 trainer = SFTTrainer(
